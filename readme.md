@@ -4,9 +4,12 @@ Minecraft world from GeoJson
 
 ### Steps
 - Create GeoJson file
-    I am using this site http://geojson.io/
+    I am using [geojson.io](http://geojson.io/)
 
 ![http://geojson.io/](https://raw.githubusercontent.com/YaroslavGaponov/geocraft/master/images/geojson.jpg "http://geojson.io/")
+
+- My demo map
+[github link](https://github.com/YaroslavGaponov/geocraft/blob/master/example/map.geojson)
 
 - Run NodeCraft server
 
