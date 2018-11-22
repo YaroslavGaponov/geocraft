@@ -23,7 +23,7 @@ npm run demo
 
 - Run Minecraft client
 
-![nodecraft](https://raw.githubusercontent.com/YaroslavGaponov/geocraft/master/images/nodecraft.jpg "nodecraft")
+![minecraft](https://raw.githubusercontent.com/YaroslavGaponov/geocraft/master/images/minecraft.jpg "nodecraft")
 
 ### Server example
 
