@@ -1,0 +1,20 @@
+{
+  "name": "geocraft",
+  "version": "0.0.1",
+  "description": "Minecraft world based on data from geojson files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "demo": "node ./example/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YaroslavGaponov/geocraft.git"
+  },
+  "author": "Yaroslav Gaponov",
+  "license": "MIT",
+  "dependencies": {
+    "nodecraft": "latest",
+    "points-in-polygon": "^0.2.1"
+  }
+}
