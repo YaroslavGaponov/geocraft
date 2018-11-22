@@ -16,5 +16,11 @@
   "dependencies": {
     "nodecraft": "latest",
     "points-in-polygon": "^0.2.1"
-  }
+  },
+  "keywords": [
+    "minecraft",
+    "server",
+    "geo",
+    "geojson"
+  ]
 }
