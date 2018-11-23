@@ -50,16 +50,20 @@ class GeoRender {
             feature.geometry.coordinates.map(coor => coor.map(GeoRender.convert)),
             (x, z) => {
                 for (let y = 1; y < floor; y++) {
-                    this._land.setType(x, y, z, 1);
+                    this._land.setType(x, y, z, 'brick_block');
                 }
             });
     }
 
     _grass(feature) {
+        const things = ['sapling', 'leaves', 'yellow_flower', 'red_flower', 'red_mushroom'];
         pointsInPolygon(
             feature.geometry.coordinates.map(coor => coor.map(GeoRender.convert)),
             (x, z) => {
-                this._land.setType(x, 0, z, 2);
+                this._land.setType(x, 0, z, 'grass');
+                if (Math.random() > 0.8) {
+                    this._land.setType(x, 1, z, things[Math.floor(Math.random() * things.length)]);
+                }
             });
     }
 
@@ -67,7 +71,7 @@ class GeoRender {
         pointsInPolygon(
             feature.geometry.coordinates.map(coor => coor.map(GeoRender.convert)),
             (x, z) => {
-                this._land.setType(x, 0, z, 1);
+                this._land.setType(x, 0, z, 'stone');
             });
     }
 
@@ -76,7 +80,7 @@ class GeoRender {
             feature.geometry.coordinates.map(coor => coor.map(GeoRender.convert)),
             (x, z) => {
                 for (let y = 0; y < 3; y++) {
-                    this._land.setType(x, y, z, 7);
+                    this._land.setType(x, y, z, 'planks');
                 }
             });
     }
