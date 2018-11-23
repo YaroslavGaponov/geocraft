@@ -1,3 +1,4 @@
+const bresenham = require('bresenham');
 const pointsInPolygon = require('points-in-polygon');
 const Type = require('./types');
 
@@ -76,13 +77,19 @@ class GeoRender {
     }
 
     _wall(feature) {
-        pointsInPolygon(
-            feature.geometry.coordinates.map(coor => coor.map(GeoRender.convert)),
-            (x, z) => {
-                for (let y = 0; y < 3; y++) {
-                    this._land.setType(x, y, z, 'planks');
-                }
-            });
+        feature.geometry.coordinates.forEach(coordinates => {
+            for (let i = 0; i < coordinates.length - 1; i++) {
+                const point0 = GeoRender.convert(coordinates[i]);
+                const point1 = GeoRender.convert(coordinates[i + 1]);
+
+                bresenham(point0[0], point0[1], point1[0], point1[1],
+                    (x, z) => {
+                        for (let y = 0; y < 3; y++) {
+                            this._land.setType(x, y, z, 'planks');
+                        }
+                    });
+            }
+        });
     }
 }
 
